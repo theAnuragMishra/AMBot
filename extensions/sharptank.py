@@ -209,7 +209,7 @@ async def choose(ctx):
 # ---banned words command---
 @plugin.listener(hikari.MessageCreateEvent)
 async def delbanwords(event):
-    if not event.content == "":
+    if event.content is not None:
         if 'mai' in event.content.lower() or 'maai' in event.content.lower() or 'maaai' in event.content.lower() or 'maii' in event.content.lower() or 'maaii' in event.content.lower() or 'maaaii' in event.content.lower() or 'maaaiii' in event.content.lower():
             if 'bur' in event.content.lower() or 'boor' in event.content.lower() or 'buur' in event.content.lower() or 'booor' in event.content.lower():
                 await event.message.respond(f'Please be polite')
